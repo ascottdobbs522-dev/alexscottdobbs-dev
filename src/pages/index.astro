@@ -1,0 +1,263 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+
+const projects = [
+  {
+    meta: 'iOS App · SwiftUI',
+    name: 'KetoLog',
+    desc: 'A native keto diet companion targeting iOS 26 with Liquid Glass design. Macro tracking via Open Food Facts API, intermittent fasting tracking, weight logging, and a custom suggestion engine.',
+    tags: ['SwiftUI', 'SwiftData', 'HealthKit', 'Firebase'],
+  },
+  {
+    meta: 'Mixed Reality · Unity',
+    name: 'KetoLog XR',
+    desc: 'A Meta Quest 3 mixed reality companion to KetoLog. Reads live nutrition and fasting data from Firebase Firestore synced in real-time from the iOS app via HealthKit.',
+    tags: ['Unity', 'Meta Quest 3', 'Firebase', 'MR Passthrough'],
+  },
+  {
+    meta: 'Apple Watch · Gesture Control',
+    name: 'WristPointer',
+    desc: 'Personal-use Apple Watch app that converts wrist gestures into mouse pointer input — inspired by discontinued gesture mouse tools. Full feasibility document and build roadmap produced.',
+    tags: ['watchOS', 'CoreMotion', 'Swift'],
+  },
+  {
+    meta: 'Hardware · Fusion 360',
+    name: 'Flush MicroSD Adapter',
+    desc: 'Custom flush-fitting microSD card adapter for the 2023 MacBook Pro 14". Progressing from 3D-printed PLA prototypes to CNC-machined aluminium. Designed entirely in Fusion 360.',
+    tags: ['Fusion 360', '3D Printing', 'CNC'],
+  },
+  {
+    meta: 'macOS / iOS App',
+    name: 'FastTrack',
+    desc: 'A clean fasting tracker originally built for macOS, ported to iOS. Managed via Claude Code with CLAUDE.md session continuity for sustained, context-aware development sessions.',
+    tags: ['SwiftUI', 'macOS', 'iOS', 'Claude Code'],
+  },
+  {
+    meta: 'Portfolio · Astro',
+    name: 'alexscottdobbs.dev',
+    desc: 'This site. Built with Astro for zero-JS static delivery, card-based minimal layout, and a dark developer aesthetic. Ongoing iteration with Claude as a design and code collaborator.',
+    tags: ['Astro', 'TypeScript', 'CSS'],
+  },
+];
+
+const apps = [
+  {
+    name: 'KetoLog',
+    desc: 'iOS keto companion — macro tracking, fasting, weight logging, Liquid Glass UI',
+    status: 'IN DEVELOPMENT',
+    badge: 'dev',
+  },
+  {
+    name: 'KetoLog XR',
+    desc: 'Meta Quest 3 mixed reality companion app synced to KetoLog via Firebase',
+    status: 'IN DEVELOPMENT',
+    badge: 'dev',
+  },
+  {
+    name: 'FastTrack',
+    desc: 'macOS and iOS fasting tracker with clean minimal interface',
+    status: 'ALPHA',
+    badge: 'alpha',
+  },
+  {
+    name: 'WristPointer',
+    desc: 'Apple Watch gesture-to-mouse input app — feasibility complete, build pending',
+    status: 'PLANNED',
+    badge: 'planned',
+  },
+];
+
+const devSkills = ['Swift', 'SwiftUI', 'SwiftData', 'SceneKit', 'Xcode', 'Unity', 'Firebase'];
+const designSkills = ['Fusion 360', 'Figma', 'GitHub', 'Claude Code'];
+const opsSkills = ['Case Management', 'Data Coordination', 'Process Documentation', 'Claims Handling'];
+---
+
+<Layout>
+  <!-- Nav -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#hero" class="nav-brand">alexscottdobbs.dev</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#apps">Apps</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero" style="border-top: none; padding: 0;">
+    <div class="hero">
+      <p class="hero-eyebrow mono">alexscottdobbs.dev</p>
+      <h1 class="hero-title">Operations.<br />Code. Craft.</h1>
+      <p class="hero-subtitle">
+        Civil service operations professional turned independent iOS developer.
+        I build tools that solve real problems — from workflow automation to native Apple apps.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View Projects ↓</a>
+        <a href="#contact" class="btn">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number mono">01 —</span>
+        <span class="section-title">About</span>
+        <div class="section-rule"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-bio">
+          <p>
+            Based in Belfast, Northern Ireland. Five years in the Northern Ireland Civil Service
+            at the Department for Communities — case management, data coordination, and
+            documentation at scale.
+          </p>
+          <p>
+            Outside of that: building native iOS and macOS apps with Swift and SwiftUI,
+            prototyping hardware in Fusion 360, and experimenting with mixed reality on Meta Quest 3.
+          </p>
+          <p>
+            I'm drawn to work that sits at the intersection of structured process and hands-on
+            building — whether that's a case management workflow or a polished SwiftUI interface.
+          </p>
+          <a href="#contact" class="cta-link">Open to Remote Roles →</a>
+        </div>
+        <div class="skills-grid">
+          <div>
+            <p class="skill-group-label">Development</p>
+            <div class="skill-tags">
+              {devSkills.map((s) => <span class="tag">{s}</span>)}
+            </div>
+          </div>
+          <div>
+            <p class="skill-group-label">Design &amp; Tools</p>
+            <div class="skill-tags">
+              {designSkills.map((s) => <span class="tag">{s}</span>)}
+            </div>
+          </div>
+          <div>
+            <p class="skill-group-label">Operations</p>
+            <div class="skill-tags">
+              {opsSkills.map((s) => <span class="tag">{s}</span>)}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number mono">02 —</span>
+        <span class="section-title">Projects</span>
+        <div class="section-rule"></div>
+      </div>
+      <div class="projects-grid">
+        {projects.map((p) => (
+          <article class="project-card">
+            <p class="project-meta mono">{p.meta}</p>
+            <h3 class="project-name">{p.name}</h3>
+            <p class="project-desc">{p.desc}</p>
+            <div class="project-tags">
+              {p.tags.map((t) => <span class="tag">{t}</span>)}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- App Status -->
+  <section id="apps">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number mono">03 —</span>
+        <span class="section-title">App Status</span>
+        <div class="section-rule"></div>
+      </div>
+      <div class="status-list">
+        {apps.map((a) => (
+          <div class="status-item">
+            <div>
+              <p class="status-name mono">{a.name}</p>
+              <p class="status-desc">{a.desc}</p>
+            </div>
+            <span class={`status-badge ${a.badge}`}>{a.status}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number mono">04 —</span>
+        <span class="section-title">Contact</span>
+        <div class="section-rule"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="contact-lead">
+            Open to remote roles in case management, claims handling, data coordination, or
+            iOS development collaborations. Based in Belfast — working anywhere.
+          </p>
+          <div class="contact-links">
+            <div class="contact-link-row">
+              <span class="contact-link-icon">@</span>
+              <a href="mailto:alex@alexscottdobbs.dev">alex@alexscottdobbs.dev</a>
+            </div>
+            <div class="contact-link-row">
+              <span class="contact-link-icon">GH</span>
+              <a href="https://github.com/alexscottdobbs" target="_blank" rel="noopener noreferrer">
+                github.com/alexscottdobbs
+              </a>
+            </div>
+            <div class="contact-link-row">
+              <span class="contact-link-icon">in</span>
+              <a href="https://linkedin.com/in/alexscottdobbs" target="_blank" rel="noopener noreferrer">
+                linkedin.com/in/alexscottdobbs
+              </a>
+            </div>
+          </div>
+        </div>
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/yourformid"
+          method="POST"
+        >
+          <div class="form-field">
+            <label class="form-label" for="name">Name</label>
+            <input class="form-input" type="text" id="name" name="name" required />
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" type="email" id="email" name="email" required />
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="message">Message</label>
+            <textarea class="form-textarea" id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy mono">© 2026 Alex Scott Dobbs. Belfast, NI.</span>
+      <span class="footer-tags mono">Operations · iOS · Hardware</span>
+    </div>
+  </footer>
+</Layout>
